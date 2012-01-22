@@ -81,12 +81,12 @@ public class AnimalQuizWebTest {
         // given
         final WebClient webClient = new WebClient();
         WebAutomationAnimalQuizActionsBuilder builder = new WebAutomationAnimalQuizActionsBuilder((HtmlPage)webClient.getPage(DEPLOYMENT_SERVER));
+        builder.clickOk();
+        builder.clickOk();
 
         // when
-        builder.clickOk();
-        builder.clickOk();
         builder.selectYes();
-        
+
         // then
         Assert.assertTrue(builder.getPage().asText().contains("yeah"));
     }
